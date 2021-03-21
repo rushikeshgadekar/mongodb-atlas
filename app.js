@@ -3,8 +3,10 @@ const connectDB = require("./db");
 const app = express();
 const cors = require("cors");
 require("dotenv").config();
-
-app.use(cors());
+var corsOptions = {
+  origin: "https://thirsty-borg-d6d576.netlify.app/",
+};
+app.use(cors(corsOptions));
 app.use(express.json({ extended: false }));
 
 connectDB();
